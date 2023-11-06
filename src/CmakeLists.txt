@@ -1,0 +1,5 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.7)
+project(MyLib)
+
+set(SOURCE_LIB Shape.cpp)
+add_library(MyLib STATIC "${SOURCE_LIB}")
