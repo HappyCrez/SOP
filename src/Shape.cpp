@@ -1,9 +1,16 @@
 #include "Shape.h"
 
-Shape::Shape() {
-    draw();
+Shape::Shape() : Shape(0, 0, 30, "Shape") { }
+
+Shape::Shape(int coordX, int coordY, int size, std::string title) {
+    Shape::coordX = coordX;
+    Shape::coordY = coordY;
+    Shape::size = size;
+    Shape::title = title;
 }
 
-void Shape::draw() {
-    std::cout << "I'm shape\n";
+std::string Shape::toString() {
+    return "Shape class\n";
 }
+
+void Shape::draw() { }

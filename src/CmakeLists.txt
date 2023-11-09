@@ -1,5 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.7)
 project(MyLib)
 
-set(SOURCE_LIB Shape.cpp)
+set(SOURCE_LIB  Shape.cpp
+                Circle.cpp
+                Rectangle.cpp)
 add_library(MyLib STATIC "${SOURCE_LIB}")

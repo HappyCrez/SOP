@@ -1,8 +1,11 @@
 #include "dependencies.h"
-#include "Shape.h"
+#include "Circle.h"
+#include "Rectangle.h"
 
 int main(int n, char** args) {
-    std::cout << "hello world!\n";
+    Circle circle(0, 0, 5, "My the best circle");
+    circle.draw();
 
-    Shape shape;
+    Rectangle rectangle;
+    rectangle.draw();
 }
