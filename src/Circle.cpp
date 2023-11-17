@@ -9,7 +9,6 @@ void Circle::draw() {
         fprintf(stdout, "%*c%*c\n", i*i, '*', size*size - i*i*2, '*');
     }
     
-    
     for (int i = 0; i < size - (size / 5); i++) {
         if (i == 0) {
             int center;
@@ -22,7 +21,8 @@ void Circle::draw() {
                 fprintf(stdout, "%-*c%s%*c\n", center, '*', "...", center, '*');
             }
         }
-        else
+        else {
             fprintf(stdout, "%*c%*c\n", i*i, '*', size*size - i*i*2, '*');
+        }
     }
 }

@@ -7,10 +7,17 @@ Shape::Shape(int coordX, int coordY, int size, std::string title) {
     Shape::coordY = coordY;
     Shape::size = size;
     Shape::title = title;
+    shape_count++;
 }
 
 std::string Shape::toString() {
     return "Shape class\n";
 }
 
-void Shape::draw() { }
+void Shape::draw() {
+    std::cout << "Shape draw\n";
+}
+
+int Shape::getShapeObjectsCount() {
+    return shape_count;
+}
