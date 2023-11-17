@@ -5,5 +5,6 @@ set(SOURCE_LIB  Shape.cpp
                 Circle.cpp
                 Rectangle.cpp
                 Table.cpp
-                Canvas.cpp)
+                Canvas.cpp
+                Complex.cpp)
 add_library(MyLib STATIC "${SOURCE_LIB}")

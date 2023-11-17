@@ -18,4 +18,7 @@ public:
     virtual void draw();
 
     static int getShapeObjectsCount();
+    
+    Shape operator++();
+    Shape operator++(int d);
 };
