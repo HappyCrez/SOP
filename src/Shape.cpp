@@ -21,3 +21,13 @@ void Shape::draw() {
 int Shape::getShapeObjectsCount() {
     return shape_count;
 }
+
+Shape Shape::operator++() {
+    this->size++;
+    return *this;
+}
+
+Shape Shape::operator++(int d) {
+    this->size++;
+    return *this;
+}
