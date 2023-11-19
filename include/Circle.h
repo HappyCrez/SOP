@@ -7,5 +7,5 @@ public:
     Circle();
     Circle(int coordX, int coordY, int size, std::string title);
 
-    void draw();
+    void draw(FILE *out_stream);
 };

@@ -15,7 +15,7 @@ public:
     Shape(int coordX, int coordY, int size, std::string title);
     
     std::string toString();
-    virtual void draw();
+    virtual void draw(FILE *out_stream);
 
     static int getShapeObjectsCount();
     

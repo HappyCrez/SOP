@@ -12,9 +12,9 @@ private:
     std::vector<Table> table_mass;
 public:
     static Canvas& getInstance();
-    void draw();
-    void drawShapes();
-    void drawTables();
+    void draw(FILE *out_stream);
+    void drawShapes(FILE *out_stream);
+    void drawTables(FILE *out_stream);
 
     void addShape(Shape *shape);
     void addTable(Table &table);

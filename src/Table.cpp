@@ -12,15 +12,15 @@ Table::Table(int row_count, int col_count, int cell_size, std::string title) {
     cell_count = 0;
 }
 
-void Table::draw() {
+void Table::draw(FILE *out_stream) {
     Rectangle title_label(0, 0, int(title.length() * 1.5), title);
-    title_label.draw();
+    title_label.draw(out_stream);
 
     for (int i = 0; i < row_count; i ++) {
-        fprintf(stdout, "|");
+        fprintf(out_stream, "|");
         for (int j = 0; j < col_count; j++)
-            fprintf(stdout, "%-*s \t| ", cell_size, table[i * col_count + j].c_str());
-        fprintf(stdout, "\n");
+            fprintf(out_stream, "%-*s \t| ", cell_size, table[i * col_count + j].c_str());
+        fprintf(out_stream, "\n");
     }
 }
 
@@ -32,18 +32,25 @@ void Table::add(std::string item) {
 }
 
 void Table::add(int cell_index, std::string item) {
-    if (cell_index < 0 || cell_index > row_count * col_count) {
-        std::cerr << "\nIndex is over bounds\n";
-        return;
+    try {
+        if (cell_index < 0 || cell_index > row_count * col_count) {
+            throw std::exception("Index is over bounds");
+        }
+        table[cell_count++] = item;
     }
-    table[cell_count++] = item;
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;;
+    }
 }
 
 void Table::add(int row, int col, std::string item) {
-    if (row >= 0 && col >= 0 && row < row_count && col < col_count) {
-        std::cerr << "\nIndex is over bounds\n";
-        return;
+    try {
+        if (row >= 0 && col >= 0 && row < row_count && col < col_count) {
+            throw std::exception("Index is over bounds");
+        }
+        table[row * col_count + col] = item;    
     }
-    table[row * col_count + col] = item;
-
+    catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
 }

@@ -18,7 +18,8 @@ int main(int n, char** args) {
     result = num1 * num2;
     std::cout << "complex1 * complex2 = " <<result << std::endl;
 
-    result = num1 / num2;
+    // Throw exception by division zero
+    result = num1 / Complex(0, 0);
     std::cout << "complex1 / complex2 = " <<result << std::endl;
 
     Circle *circle = new Circle(0, 0, 5, "My the best circle");
@@ -42,5 +43,6 @@ int main(int n, char** args) {
     canvas.addShape(rectangle);
     canvas.addTable(table);
     
-    canvas.draw();
+    FILE *out_stream = fopen("mytxt.txt", "w");
+    canvas.draw(out_stream);
 }

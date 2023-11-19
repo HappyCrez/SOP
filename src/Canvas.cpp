@@ -7,19 +7,19 @@ Canvas& Canvas::getInstance() {
     return instance;
 }
 
-void Canvas::draw() {
-    drawShapes();
-    drawTables();
+void Canvas::draw(FILE *out_stream) {
+    drawShapes(out_stream);
+    drawTables(out_stream);
 }
 
-void Canvas::drawShapes() {
+void Canvas::drawShapes(FILE *out_stream) {
     for (auto i : shape_mass)
-        (*i).draw();
+        (*i).draw(out_stream);
 }
 
-void Canvas::drawTables() {
+void Canvas::drawTables(FILE *out_stream) {
     for (auto i : table_mass)
-        i.draw();
+        i.draw(out_stream);
 }
 
 void Canvas::addShape(Shape *shape) {

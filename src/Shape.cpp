@@ -14,7 +14,7 @@ std::string Shape::toString() {
     return "Shape class\n";
 }
 
-void Shape::draw() {
+void Shape::draw(FILE *out_stream) {
     std::cout << "Shape draw\n";
 }
 
