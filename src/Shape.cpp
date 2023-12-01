@@ -15,7 +15,7 @@ std::string Shape::toString() {
 }
 
 void Shape::draw(FILE *out_stream) {
-    std::cout << "Shape draw\n";
+    fprintf(out_stream, "|--%*s--|\n", size, "Shape method called");
 }
 
 int Shape::getShapeObjectsCount() {

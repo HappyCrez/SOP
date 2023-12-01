@@ -43,6 +43,9 @@ int main(int n, char** args) {
     canvas.addShape(rectangle);
     canvas.addTable(table);
     
-    FILE *out_stream = fopen("mytxt.txt", "w");
-    canvas.draw(out_stream);
+    // FILE *out_stream = fopen("mytxt.txt", "w");
+    canvas.draw(stdout);
+    cout << "hello world\n";
+    // Lab6
+
 }
