@@ -4,9 +4,9 @@ project(Library)
 set (CMAKE_CXX_STANDARD 17)
 set(CLIENT_SOURCE example/Client.cpp)
 
-include_directories(Magick++/include include)
-add_executable(Library "${CLIENT_SOURCE}")
+set(Header_Files include/.)
+include_directories(${Header_Files})
+add_executable(Library "${CLIENT_SOURCE}" "${Header_Files}")
 
 add_subdirectory(src)
-link_directories( Magick++/lib)
 target_link_libraries(Library MyLib)
