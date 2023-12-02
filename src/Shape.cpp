@@ -15,7 +15,7 @@ std::string Shape::toString() {
 }
 
 void Shape::draw(FILE *out_stream) {
-    fprintf(out_stream, "|--%*s--|\n", size, "Shape method called");
+    fprintf(out_stream, "<%*s>\n", size / 2, "Shape method called");
 }
 
 int Shape::getShapeObjectsCount() {
@@ -29,5 +29,15 @@ Shape Shape::operator++() {
 
 Shape Shape::operator++(int d) {
     this->size++;
+    return *this;
+}
+
+Shape& Shape::operator=(const Shape& shape) {
+    if (&shape != this) {
+        size = shape.size;
+        title = shape.title;
+        coordX = shape.coordX;
+        coordY = shape.coordY;
+    }
     return *this;
 }

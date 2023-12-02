@@ -6,7 +6,8 @@ set(CLIENT_SOURCE example/Client.cpp)
 
 set(Header_Files include/.)
 include_directories(${Header_Files})
-add_executable(Library "${CLIENT_SOURCE}" "${Header_Files}")
+
+add_executable(Library "${CLIENT_SOURCE}")
 
 add_subdirectory(src)
 target_link_libraries(Library MyLib)

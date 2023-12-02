@@ -4,6 +4,7 @@
 #include "Table.h"
 #include "Canvas.h"
 #include "Complex.h"
+#include "Generic.h"
 
 int main(int n, char** args) {
     Complex num1(4.24,20.12);
@@ -45,7 +46,10 @@ int main(int n, char** args) {
     
     // FILE *out_stream = fopen("mytxt.txt", "w");
     canvas.draw(stdout);
-    cout << "hello world\n";
     // Lab6
-
+    // We can create ever object by using basic template
+    Generic int_id(1023);
+    Generic string_id("1234");
+    Generic ring(circle);
+    // etc.
 }

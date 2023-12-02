@@ -21,4 +21,5 @@ public:
     
     Shape operator++();
     Shape operator++(int d);
+    Shape& operator=(const Shape& shape);
 };
