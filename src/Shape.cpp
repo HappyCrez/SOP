@@ -41,3 +41,7 @@ Shape& Shape::operator=(const Shape& shape) {
     }
     return *this;
 }
+
+int Shape::getSize() {
+    return size;
+}

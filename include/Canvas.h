@@ -9,13 +9,15 @@ private:
     Canvas(Canvas const&);
 
     std::vector<Shape*> shape_mass;
-    std::vector<Table> table_mass;
+    std::vector<Table*> table_mass;
 public:
     static Canvas& getInstance();
+    void sortShapesBySize();
+
     void draw(FILE *out_stream);
     void drawShapes(FILE *out_stream);
     void drawTables(FILE *out_stream);
 
     void addShape(Shape *shape);
-    void addTable(Table &table);
+    void addTable(Table *table);
 };

@@ -19,13 +19,17 @@ void Canvas::drawShapes(FILE *out_stream) {
 
 void Canvas::drawTables(FILE *out_stream) {
     for (auto i : table_mass)
-        i.draw(out_stream);
+        (*i).draw(out_stream);
 }
 
 void Canvas::addShape(Shape *shape) {
     shape_mass.push_back(shape);
 }
 
-void Canvas::addTable(Table &table) {
+void Canvas::addTable(Table *table) {
     table_mass.push_back(table);
+}
+
+void Canvas::sortShapesBySize() {
+    std::sort(shape_mass.begin(), shape_mass.end(), [] (Shape *elem1,Shape *elem2) { return (*elem1).getSize() > (*elem2).getSize(); });
 }

@@ -18,6 +18,7 @@ public:
     virtual void draw(FILE *out_stream);
 
     static int getShapeObjectsCount();
+    int getSize();
     
     Shape operator++();
     Shape operator++(int d);

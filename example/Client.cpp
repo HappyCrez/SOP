@@ -30,14 +30,14 @@ int main(int n, char** args) {
 
     fprintf(stdout, "\nShapes count = %d\n", Shape::getShapeObjectsCount());
 
-    Table table(2, 3, 10, "My the best title ever");
-    table.add("ID");
-    table.add("Name");
-    table.add("Surname");
-    
-    table.add("PI-21");
-    table.add("Vladimir");
-    table.add("Gorbunov");
+    Table *table = new Table(2, 3, 10, "My the best title ever");
+    (*table).add("ID");
+    (*table).add("Name");
+    (*table).add("Surname");
+   
+    (*table).add("PI-21");
+    (*table).add("Vladimir");
+    (*table).add("Gorbunov");
 
     Canvas &canvas = Canvas::getInstance();
     canvas.addShape(circle);
